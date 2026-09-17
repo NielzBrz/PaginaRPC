@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Tecnológicos & Soporte IT | Soluciones Informáticas</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES Y RESET --- */
+        :root {
+            --primary-color: #0066ff;
+            --primary-dark: #004bbd;
+            --secondary-color: #25d366; /* WhatsApp Green */
+            --dark-color: #0f172a;
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER / NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 100px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+            background-color: #20ba5a;
+        }
+
+        /* --- SERVICIOS --- */
+        .services {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+        }
+
+        .card-body p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-card:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* --- MARCAS BANNER --- */
+        .brands-section {
+            background-color: var(--white);
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .brands-section h3 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brands-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .brand-item {
+            background: var(--light-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* --- FOOTER & WHATSAPP FLOATING --- */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            header { flex-direction: column; gap: 10px; padding: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-microchip"></i> Soluciones IT
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Servicios Informáticos & Soporte Técnico Profesional</h1>
+            <p>Reparación, mantenimiento, redes y equipamiento a medida. Resolvemos tus problemas tecnológicos con rapidez y precisión.</p>
+            <a href="https://wa.me/543816155234?text=Hola!%20Quiero%20realizar%20una%20consulta%20técnica" target="_blank" class="btn-main">
+                <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Instalación de Redes" class="card-img">
+                <div class="card-body">
+                    <h3>Instalación de Redes Informáticas</h3>
+                    <p>Cableado estructurado, configuración de routers, switches, redes Wi-Fi y optimización de conectividad para el hogar o la empresa.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Redes Informáticas">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=600&q=80" alt="Reparación de PC Laptop" class="card-img">
+                <div class="card-body">
+                    <h3>Reparación de PC y Laptop</h3>
+                    <p>Diagnóstico de fallas de hardware y software, cambio de componentes, rebalanceo térmico y optimización de rendimiento.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Reparación de PC/Laptop">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Limpieza y Mantenimiento" class="card-img">
+                <div class="card-body">
+                    <h3>Limpieza y Mantenimiento</h3>
+                    <p>Mantenimiento preventivo y correctivo de hardware. Limpieza física interna, cambio de pasta térmica y eliminación de polvo.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Limpieza y Mantenimiento">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="Instalación de Programas" class="card-img">
+                <div class="card-body">
+                    <h3>Instalación de Programas</h3>
+                    <p>Instalación y optimización de Sistemas Operativos, suites de oficina, antivirus, controladores y software especializado.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Instalación de Programas">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=80" alt="Venta de Equipos y Hardware" class="card-img">
+                <div class="card-body">
+                    <h3>Venta de Equipos & Hardware</h3>
+                    <p>Asesoramiento y armado de PCs a medida para gaming, oficina o diseño. Venta de componentes y periféricos de calidad.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Venta de Equipos y Hardware">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Recuperación de Datos" class="card-img">
+                <div class="card-body">
+                    <h3>Recuperación de Datos</h3>
+                    <p>Recuperación de archivos perdidos o eliminados de discos rígidos (HDD), SSD, pendrives y tarjetas de memoria.</p>
+                    <a href="#" class="btn-card wa-btn" data-service="Recuperación de Datos">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Servicio
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER DE MARCAS -->
+    <section class="brands-section">
+        <h3>Trabajamos con todas las marcas</h3>
+        <div class="brands-badge">
+            <span class="brand-item">HP</span>
+            <span class="brand-item">Dell</span>
+            <span class="brand-item">Lenovo</span>
+            <span class="brand-item">Asus</span>
+            <span class="brand-item">Acer</span>
+            <span class="brand-item">Apple</span>
+            <span class="brand-item">Gigabyte</span>
+            <span class="brand-item">Kingston</span>
+            <span class="brand-item">Y más...</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <p>&copy; 2026 Soporte Informático Profesional. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/543816155234?text=Hola!%20Me%20gustaría%20recibir%20más%20información." class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const phoneNumber = "543816155234";
+            const serviceButtons = document.querySelectorAll('.wa-btn');
+
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Obtiene el nombre del servicio desde el atributo data-service
+                    const serviceName = button.getAttribute('data-service');
+                    
+                    // Crea un mensaje personalizado para enviar a WhatsApp
+                    const customMessage = `Hola!%20Estoy%20interesado%20en%20el%20servicio%20de:%20${encodeURIComponent(serviceName)}.`;
+                    
+                    // Redirige al link de WhatsApp
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${customMessage}`;
+                    window.open(whatsappURL, '_blank');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
