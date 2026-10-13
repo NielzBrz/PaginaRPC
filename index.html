@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Re-Boot | Mantenimiento y Optimización de PCs</title>
-    
+
     <!-- Google Fonts: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -45,7 +45,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: calc(100vh - 4rem); /* Ocupa prácticamente toda la pantalla inicial */
+            min-height: calc(100vh - 4rem);
         }
     </style>
 </head>
@@ -60,16 +60,34 @@
                         <span class="font-semibold">Re-</span><span class="font-extrabold text-reboot-accent">Boot</span>
                     </a>
                 </div>
+                <!-- Menú en pantallas grandes (Desktop) -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8 text-sm font-medium">
+                    <div class="ml-10 flex items-baseline space-x-6 text-sm font-medium">
                         <a href="#servicios" class="hover:text-reboot-accent transition-colors">Servicios</a>
+                        <a href="#quien-soy" class="hover:text-reboot-accent transition-colors">¿Quién soy?</a>
                         <a href="#paquetes" class="hover:text-reboot-accent transition-colors">Paquetes</a>
                         <a href="#formulario" class="hover:text-reboot-accent transition-colors">Ingresar Equipo</a>
                         <a href="#beneficios" class="hover:text-reboot-accent transition-colors">Garantías</a>
                         <a href="#contacto" class="bg-reboot-accent text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Contacto</a>
                     </div>
                 </div>
+                <!-- Botón Menú Hamburguesa (Móvil) -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Menú desplegable para Celulares -->
+        <div id="mobile-menu" class="hidden md:hidden bg-reboot-card border-t border-gray-800 px-4 pt-4 pb-6 space-y-3">
+            <a href="#servicios" class="mobile-link block py-2 px-3 rounded-md hover:bg-gray-800 hover:text-reboot-accent transition-colors text-base font-medium">Servicios</a>
+            <a href="#quien-soy" class="mobile-link block py-2 px-3 rounded-md hover:bg-gray-800 hover:text-reboot-accent transition-colors text-base font-medium">¿Quién soy?</a>
+            <a href="#paquetes" class="mobile-link block py-2 px-3 rounded-md hover:bg-gray-800 hover:text-reboot-accent transition-colors text-base font-medium">Paquetes</a>
+            <a href="#formulario" class="mobile-link block py-2 px-3 rounded-md hover:bg-gray-800 hover:text-reboot-accent transition-colors text-base font-medium">Ingresar Equipo</a>
+            <a href="#beneficios" class="mobile-link block py-2 px-3 rounded-md hover:bg-gray-800 hover:text-reboot-accent transition-colors text-base font-medium">Garantías</a>
+            <a href="#contacto" class="mobile-link block py-2 px-3 rounded-md bg-reboot-accent text-white font-medium text-center hover:bg-blue-600 transition-colors">Contacto</a>
         </div>
     </nav>
 
@@ -100,7 +118,7 @@
                 <h2 class="text-3xl font-extrabold mb-4">Soluciones Técnicas</h2>
                 <div class="h-1 w-20 bg-reboot-accent mx-auto rounded"></div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-reboot-bg p-8 rounded-lg border border-gray-800 hover:border-reboot-accent transition-colors">
                     <i class="fa-solid fa-microchip text-4xl text-reboot-accent mb-6"></i>
@@ -109,7 +127,7 @@
                         Limpieza profunda, cambio de pasta térmica de alta conductividad, lubricación de ventiladores y Cable Management profesional para optimizar el flujo de aire.
                     </p>
                 </div>
-                
+
                 <div class="bg-reboot-bg p-8 rounded-lg border border-gray-800 hover:border-reboot-accent transition-colors">
                     <i class="fa-solid fa-laptop-code text-4xl text-reboot-accent mb-6"></i>
                     <h3 class="text-xl font-semibold mb-3">Software y Sistemas</h3>
@@ -129,8 +147,43 @@
         </div>
     </section>
 
-    <!-- 2. Paquetes Section (Fondo Negro Base: bg-reboot-bg) -->
-    <section id="paquetes" class="py-20 bg-reboot-bg border-b border-gray-800">
+    <!-- 2. ¿Quién soy? Section (Fondo Negro Base: bg-reboot-bg) -->
+    <section id="quien-soy" class="py-20 bg-reboot-bg border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold mb-4">¿Quién soy?</h2>
+                <div class="h-1 w-20 bg-reboot-accent mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Avatar / Foto de presentación -->
+                <div class="flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 shadow-[0_0_30px_rgba(0,136,255,0.2)] rounded-full overflow-hidden">
+                        <!-- Aquí puedes cambiar el enlace de la imagen por la de tu avatar o foto real -->
+                        <img src="images/quiensoy.png" alt="Técnico Re-Boot" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Texto descriptivo basado en tu presentación -->
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-reboot-accent">
+                        Pasión por el hardware
+                    </h3>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+                        Soy un técnico apasionado por el hardware y el armado de computadoras. Me dedico a dar soluciones prácticas, desde limpiezas profundas hasta la configuración de sistemas, enfocado en sacarle el máximo provecho a tu equipo para que funcione de la manera más fluida posible.
+                    </p>
+                    <div class="flex items-center gap-4 text-gray-400 text-sm font-semibold">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-reboot-accent"></i> Rápido</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-reboot-accent"></i> Confiable</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-reboot-accent"></i> Eficiente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Paquetes Section (Fondo Gris Técnico: bg-reboot-card) -->
+    <section id="paquetes" class="py-20 bg-reboot-card border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-extrabold mb-4">Planes de Servicio</h2>
@@ -139,7 +192,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
                 <!-- Básico -->
-                <div class="bg-reboot-card p-8 rounded-lg border border-gray-800 flex flex-col justify-between">
+                <div class="bg-reboot-bg p-8 rounded-lg border border-gray-800 flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Re-Boot Básico</h3>
                         <p class="text-sm text-gray-400 mb-6">Ideal para PCs lentas o mantenimiento preventivo.</p>
@@ -161,7 +214,7 @@
                 </div>
 
                 <!-- Total -->
-                <div class="bg-reboot-card p-8 rounded-lg border-2 border-reboot-accent flex flex-col justify-between relative shadow-[0_0_20px_rgba(0,136,255,0.15)]">
+                <div class="bg-reboot-bg p-8 rounded-lg border-2 border-reboot-accent flex flex-col justify-between relative shadow-[0_0_20px_rgba(0,136,255,0.15)]">
                     <div class="absolute top-0 right-0 bg-reboot-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-sm uppercase tracking-wider">
                         Recomendado
                     </div>
@@ -189,8 +242,8 @@
         </div>
     </section>
 
-    <!-- 3. Formulario Section (Fondo Gris Técnico: bg-reboot-card) -->
-    <section id="formulario" class="py-20 bg-reboot-card border-b border-gray-800">
+    <!-- 4. Formulario Section (Fondo Negro Base: bg-reboot-bg) -->
+    <section id="formulario" class="py-20 bg-reboot-bg border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <i class="fa-solid fa-clipboard-list text-4xl text-reboot-accent mb-4"></i>
             <h2 class="text-3xl font-extrabold mb-4">¿Quieres ingresar tu equipo?</h2>
@@ -203,26 +256,26 @@
         </div>
     </section>
 
-    <!-- 4. Valor Agregado / Garantías (Fondo Negro Base: bg-reboot-bg) -->
-    <section id="beneficios" class="py-20 bg-reboot-bg border-b border-gray-800">
+    <!-- 5. Valor Agregado / Garantías (Fondo Gris Técnico: bg-reboot-card) -->
+    <section id="beneficios" class="py-20 bg-reboot-card border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div>
-                    <div class="w-16 h-16 bg-reboot-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
+                    <div class="w-16 h-16 bg-reboot-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
                         <i class="fa-solid fa-truck-fast text-2xl text-reboot-accent"></i>
                     </div>
                     <h4 class="font-semibold text-lg mb-2">Servicio a Domicilio</h4>
                     <p class="text-sm text-gray-400">Retiro y entrega del equipo directamente en tu puerta.</p>
                 </div>
                 <div>
-                    <div class="w-16 h-16 bg-reboot-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
+                    <div class="w-16 h-16 bg-reboot-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
                         <i class="fa-solid fa-handshake-angle text-2xl text-reboot-accent"></i>
                     </div>
                     <h4 class="font-semibold text-lg mb-2">Garantía 0 Riesgo</h4>
                     <p class="text-sm text-gray-400">"Sin solución = $0". Si no logramos dar una solución, la consulta es gratis.</p>
                 </div>
                 <div>
-                    <div class="w-16 h-16 bg-reboot-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
+                    <div class="w-16 h-16 bg-reboot-bg rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
                         <i class="fa-solid fa-headset text-2xl text-reboot-accent"></i>
                     </div>
                     <h4 class="font-semibold text-lg mb-2">Soporte Post-Servicio</h4>
@@ -232,8 +285,8 @@
         </div>
     </section>
 
-    <!-- 5. Footer / Contacto (Fondo Gris Técnico: bg-reboot-card) -->
-    <footer id="contacto" class="bg-reboot-card py-12 mt-auto">
+    <!-- 6. Footer / Contacto (Fondo Negro Base: bg-reboot-bg) -->
+    <footer id="contacto" class="bg-reboot-bg py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="mb-6">
                 <a href="#" class="text-3xl tracking-tight inline-block">
@@ -256,6 +309,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script JavaScript para controlar el menú hamburguesa -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const icon = btn.querySelector('i');
+
+        // Alternar visibilidad del menú al hacer clic en el botón
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Cerrar el menú automáticamente al hacer clic en cualquier opción
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 
 </body>
 </html>
